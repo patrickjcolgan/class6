@@ -56,7 +56,8 @@ function game(question, answer, element, image){
     if (userInput === answer) { // input matches answer
       element.textContent = 'Great, you guessed it right';
       element.className = "correct";
-      image.innerHTML = "<img src='guac.jpg'>";
+      image.src = "guac.jpg"; 
+      // image.innerHTML = "<img src='guac.jpg'>";
       counter++
     } else {
       element.textContent = 'Sorry, you guessed wrong';
