@@ -42,3 +42,11 @@ ul {
 #footer1 {
   font-size: 15px;
 }
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
