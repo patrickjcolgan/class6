@@ -16,15 +16,15 @@ var userName = prompt("Hey, what's your name?");
 var els = [pElOne, pElTwo, pElThree, pElFour];
 
 var questions = [
- "Do you think my name is Nurbek or Sally?",
- "Do you think I am from here or Texas?",
- "Is tennis my favorite hobby, Yes or No ?",
-  "Guess a number between 1-10"
+ "Do you think my pal from Kyrgyzstan is named Nurbek or Sally?",
+ "Do you think Nurbek lives in Seattle or Singapore?",
+ "Could Novak Djokovic beat Nurbek at tennis, Yes or No ?",
+ "Guess a number between 1-10"
 ];
 
 var answers = [
  "nurbek",
- "here",
+ "seattle",
  "yes",
  4
 ];
@@ -56,7 +56,7 @@ function game(question, answer, element, image){
     if (userInput === answer) { // input matches answer
       element.textContent = 'Great, you guessed it right';
       element.className = "correct";
-      image.src = "guac.jpg"; 
+      image.src = "guac.jpg";
       // image.innerHTML = "<img src='guac.jpg'>";
       counter++
     } else {
