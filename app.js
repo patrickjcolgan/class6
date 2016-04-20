@@ -35,21 +35,26 @@ function game(question, answer, element){
     while (userInput !== answer) {
       if (userInput < answer) {
         element.textContent = 'your guess is too low';
+        els[i].className = "incorrect";
         userInput = parseInt(prompt('Guess again.'))
       } else if (userInput > answer) {
         element.textContent = 'your guess is too high';
+        els[i].className = "incorrect";
         userInput = parseInt(prompt('Guess again.'))
       }
     }
     //this handles correct amount of answer
     element.textContent = 'Great, you guessed the correct number, 4';
+    els[i].className = "correct";
 //}
   } else {
     if (userInput === answer) { // input matches answer
       element.textContent = 'Great, you guessed it right';
+      els[i].className = "correct";
       counter++
     } else {
       element.textContent = 'Sorry, you guessed wrong';
+      els[i].className = "incorrect";
     }
   }
 }
