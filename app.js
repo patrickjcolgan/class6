@@ -4,10 +4,13 @@ var pElThree = document.getElementById("p3");
 var pElFour = document.getElementById("p4");
 var counter = 0;
 
+//New Images
 var imgElOne = document.getElementById("img1");
 var imgElTwo = document.getElementById("img2");
 var imgElThree = document.getElementById("img3");
 var imgElFour = document.getElementById("img4");
+//New Image Array
+var imageElements = [imgElOne, imgElTwo, imgElThree, imgElFour];
 
 var userName = prompt("Hey, what's your name?");
 var els = [pElOne, pElTwo, pElThree, pElFour];
@@ -26,7 +29,7 @@ var answers = [
  4
 ];
 
-function game(question, answer, element){
+function game(question, answer, element, image){
   var userInput = prompt(question).toLowerCase();
   if (isNaN(parseInt(userInput)) === false) {
     userInput = parseInt(userInput);
@@ -35,29 +38,32 @@ function game(question, answer, element){
     while (userInput !== answer) {
       if (userInput < answer) {
         element.textContent = 'your guess is too low';
-        els[i].className = "incorrect";
+        element.className = "incorrect";
         userInput = parseInt(prompt('Guess again.'))
       } else if (userInput > answer) {
         element.textContent = 'your guess is too high';
-        els[i].className = "incorrect";
+        element.className = "incorrect";
         userInput = parseInt(prompt('Guess again.'))
       }
     }
     //this handles correct amount of answer
     element.textContent = 'Great, you guessed the correct number, 4';
-    els[i].className = "correct";
+    element.className = "correct";
+    image.src = "guac.jpg";
+
 //}
   } else {
     if (userInput === answer) { // input matches answer
       element.textContent = 'Great, you guessed it right';
-      els[i].className = "correct";
+      element.className = "correct";
+      image.innerHTML = "<img src='guac.jpg'>";
       counter++
     } else {
       element.textContent = 'Sorry, you guessed wrong';
-      els[i].className = "incorrect";
+      element.className = "incorrect";
     }
   }
 }
 for (i = 0; i < questions.length; i++){
-  game(questions[i], answers[i], els[i]);
+  game(questions[i], answers[i], els[i], imageElements[i]);
 }

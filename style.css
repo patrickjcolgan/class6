@@ -45,10 +45,8 @@ ul {
 
 .correct {
   color: green;
-  text-align: left;
 }
 
 .incorrect {
   color: red;
-  text-align: left; 
 }
