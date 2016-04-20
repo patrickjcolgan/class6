@@ -4,6 +4,11 @@ var pElThree = document.getElementById("p3");
 var pElFour = document.getElementById("p4");
 var counter = 0;
 
+var imgElOne = document.getElementById("img1");
+var imgElTwo = document.getElementById("img2");
+var imgElThree = document.getElementById("img3");
+var imgElFour = document.getElementById("img4");
+
 var userName = prompt("Hey, what's your name?");
 var els = [pElOne, pElTwo, pElThree, pElFour];
 
@@ -37,7 +42,7 @@ function game(question, answer, element){
       }
     }
     //this handles correct amount of answer
-    element.textContent = 'Great, you guessed the number right';
+    element.textContent = 'Great, you guessed the correct number, 4';
 //}
   } else {
     if (userInput === answer) { // input matches answer
